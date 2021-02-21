@@ -23,13 +23,16 @@ library(survminer)
 ggsurvplot(fit_1, data = KaplanMeier, palette = c("red", "blue"), break.x.by = 5,
            conf.int = T, pval = T, 
            surv.median.line = "hv", 
-           title = "", xlab = "Years Served", ylab = "Kaplan-Meier Probability",
+           title = "", xlab = "Years Served", ylab = "Proportion of Police Officers",
            legend = c(0.8, 0.7), 
            legend.title = "Groups:",
            legend.labs = c("Female", "Male"),
            xlim = c(0,45),
            pval.method = T,
-           censor = F)
+           censor = T,
+           risk.table = T,
+           censor.shape = 124,
+           censor.size = 2)
 
 
 
@@ -82,10 +85,13 @@ ggsurvplot(fit_4, data = whiteVsBlackVsHispanic,
            palette = c("orange", "green", "blue"), break.x.by = 5,
            conf.int = T, pval = T, 
            surv.median.line = "hv", 
-           title = "", xlab = "Years Served", ylab = "Kaplan-Meier Probability",
+           title = "", xlab = "Years Served", ylab = "Proportion of Police Officers",
            legend = c(0.8, 0.7), 
            legend.title = "Groups:",
            legend.labs = c("Black", "Hispanic", "White"),
            xlim = c(0,45),
            pval.method = T,
-           censor = F)
+           censor = T,
+           risk.table = T,
+           censor.shape = 124,
+           censor.size = 2)
